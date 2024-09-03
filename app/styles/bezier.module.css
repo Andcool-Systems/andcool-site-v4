@@ -1,0 +1,17 @@
+.bezier {
+    position: absolute;
+    background-color: #3d444d;
+    width: 1rem;
+    aspect-ratio: 1 / 1;
+    border: 3px var(--card-color) solid;
+    border-radius: 50%;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+    transition: background-color 250ms;
+    cursor: pointer;
+}
+
+
+.hovered {
+    background-color: #57F287;
+}

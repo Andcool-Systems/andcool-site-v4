@@ -1,0 +1,16 @@
+[
+    {
+        "startX": 1400,
+        "startY": 1170,
+        "endX": 1600,
+        "endY": 1300,
+        "vertical": false
+    },
+    {
+        "startX": 1400,
+        "startY": 1130,
+        "endX": 1600,
+        "endY": 1000,
+        "vertical": false
+    }
+]
