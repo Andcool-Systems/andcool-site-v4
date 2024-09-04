@@ -1,10 +1,11 @@
 .node {
-    padding: .75rem;
+    padding: .8rem;
     background-color: var(--card-color);
     border: 1px var(--border-color) solid;
     border-radius: .375rem;
     position: absolute;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .node h1 {

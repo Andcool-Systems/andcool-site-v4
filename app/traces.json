@@ -7,13 +7,6 @@
         "vertical": false
     },
     {
-        "startX": 1400,
-        "startY": 1237,
-        "endX": 1600,
-        "endY": 1300,
-        "vertical": false
-    },
-    {
         "startX": 1601,
         "startY": 872,
         "endX": 1700,
@@ -32,6 +25,13 @@
         "startY": 950,
         "endX": 1800,
         "endY": 872,
+        "vertical": false
+    },
+    {
+        "startX": 750,
+        "startY": 997,
+        "endX": 950,
+        "endY": 1143,
         "vertical": false
     }
 ]

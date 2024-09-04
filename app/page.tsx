@@ -90,7 +90,7 @@ const Home = () => {
         <>
             <Loader />
             <DraggableDiv position={{ ...hitValue, duration: 1 }} trigger={trigger} onUpdate={() => setTrigger(false)}>
-                <Node x={900} y={1100} width={500} height={180} header='main.node'>
+                <Node x={950} y={1100} width={450} height={180} header='main.node'>
                     <div className={main_node_style.main}>
                         <Image src='/static/andcool.jpg' alt='' width={100} height={100} />
                         <div className={main_node_style.nick}>
@@ -99,7 +99,7 @@ const Home = () => {
                         </div>
                     </div>
                 </Node>
-                <Node x={1600} y={1250} width={300} height={100} header='contacts.node'>
+                <Node x={450} y={950} width={300} height={100} header='contacts.node'>
                     <></>
                 </Node>
                 <Node x={1600} y={950} width={400} header='info.node'>

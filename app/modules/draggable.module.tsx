@@ -29,12 +29,15 @@ const DraggableDiv = ({ children, position, trigger, onUpdate }: DraggableDivPro
     const [speed, setSpeed] = useState<number>(0);
 
     const [scaleTarget, setScaleTarget] = useState<number>(1);
+    const [scaleSpeed, setScaleSpeed] = useState<number>(0.3);
 
     useEffect(() => {
         if (!position || !trigger) return;
         onUpdate();
         setHitValue(position);
         setSpeed(position.duration);
+        setScaleSpeed(position.duration);
+        setScaleTarget(1);
     }, [position])
 
     const handleMouseMove = (event: any) => {
@@ -93,7 +96,7 @@ const DraggableDiv = ({ children, position, trigger, onUpdate }: DraggableDivPro
         });
 
         const scale_target = animate(scale, scaleTarget, {
-            duration: 0.3,
+            duration: scaleSpeed,
             ease: "easeInOut",
             onUpdate: (latest) => {
                 if (!containerRef.current) return;
@@ -114,6 +117,11 @@ const DraggableDiv = ({ children, position, trigger, onUpdate }: DraggableDivPro
                 onMouseMove={handleMouseMove}
                 onMouseUp={handleMouseUp}
                 onMouseLeave={handleMouseUp}
+
+                onWheel={(evt) => {
+                    setScaleTarget(prev => Math.max(Math.min(prev + (evt.deltaY / -Math.abs(evt.deltaY) * 0.1), 1.5), 0.5));
+                    setScaleSpeed(0);
+                }}
 
                 onTouchStart={handleMouseDown}
                 onTouchMove={handleMouseMove}
@@ -138,6 +146,7 @@ const DraggableDiv = ({ children, position, trigger, onUpdate }: DraggableDivPro
                         const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
                         setHitValue({ x: -(main_cords.x - (vw / 2)), y: -(main_cords.y - (vh / 2)) });
                         setSpeed(1);
+                        setScaleSpeed(1);
                         setScaleTarget(1);
                     }
                     }
@@ -147,6 +156,7 @@ const DraggableDiv = ({ children, position, trigger, onUpdate }: DraggableDivPro
                 <button
                     onClick={() => {
                         setScaleTarget(prev => Math.min(prev + 0.1, 1.5));
+                        setScaleSpeed(0.3);
                     }
                     }
                     className={main_style.home_btn}>
@@ -155,6 +165,7 @@ const DraggableDiv = ({ children, position, trigger, onUpdate }: DraggableDivPro
                 <button
                     onClick={() => {
                         setScaleTarget(prev => Math.max(prev - 0.1, 0.5));
+                        setScaleSpeed(0.3);
                     }
                     }
                     className={main_style.home_btn}>
