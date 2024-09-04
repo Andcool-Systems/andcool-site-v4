@@ -25,9 +25,9 @@ const BezierLine = ({ startX, startY, endX, endY, vertical, setHitValue }: Bezie
     const pointEndY = startY < endY ? height : 0;
 
     const controlX1 = !vertical ? pointEndX - Math.abs(pointEndX - pointStartX) * 0.33 : pointStartX;
-    const controlY1 = !vertical ? pointStartY : pointEndY - Math.abs(pointEndY - pointStartY) * 0.33;
+    const controlY1 = !vertical ? pointStartY : startY < endY ? pointEndY - Math.abs(pointEndY - pointStartY) * 0.33 : pointEndY + Math.abs(pointEndY - pointStartY) * 0.33;
     const controlX2 = !vertical ? pointStartX + Math.abs(pointEndX - pointStartX) * 0.33 : pointEndX;
-    const controlY2 = !vertical ? pointEndY : pointStartX + Math.abs(pointEndY - pointStartY) * 0.33;
+    const controlY2 = !vertical ? pointEndY : startY < endY ? pointStartX + Math.abs(pointEndY - pointStartY) * 0.33 : pointStartX + Math.abs(pointEndY - pointStartY) * 0.66;
 
     return (
         <>
@@ -57,7 +57,7 @@ const BezierLine = ({ startX, startY, endX, endY, vertical, setHitValue }: Bezie
                 onClick={() => {
                     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
                     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-                    setHitValue({ x: endX - (vw / 2), y: endY - (vh / 2) });
+                    setHitValue({ x: -(endX - (vw / 2)), y: -(endY - (vh / 2)) });
                 }}
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
@@ -68,7 +68,7 @@ const BezierLine = ({ startX, startY, endX, endY, vertical, setHitValue }: Bezie
                 onClick={() => {
                     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
                     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-                    setHitValue({ x: startX - (vw / 2), y: startY - (vh / 2) });
+                    setHitValue({ x: -(startX - (vw / 2)), y: -(startY - (vh / 2)) });
                 }}
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}

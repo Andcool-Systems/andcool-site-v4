@@ -9,13 +9,14 @@
 
 .node h1 {
     margin: 0;
-    font-size: medium;
+    font-size: 1.5rem;
+}
+
+.node p {
+    margin-bottom: 0;
 }
 
 .home_btn {
-    position: fixed;
-    right: 1rem;
-    bottom: 1rem;
     background-color: var(--card-color);
     border: none;
     padding: .4rem;
@@ -24,8 +25,89 @@
     cursor: pointer;
     transition: background-color 250ms;
     border: 1px var(--border-color) solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    aspect-ratio: 1 / 1;
 }
 
 .home_btn:hover {
     background-color: var(--dark-hover-color);
+}
+
+.buttons_container {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: .8rem;
+}
+
+.node_header {
+    margin: 0;
+    font-size: .8rem;
+    color: gray;
+    font-weight: 500;
+}
+
+.draggable_div {
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.scale_div {
+    transform-origin: center top;
+    pointer-events: none;
+}
+
+.scale_div * {
+    pointer-events: auto;
+}
+
+.loader {
+    position: fixed;
+    inset: 0;
+    background-color: #0e0f11;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    transition: opacity .5s;
+}
+
+.loader div {
+    width: 1rem;
+    aspect-ratio: 1 / 1;
+    animation: loading 3s infinite;
+    background-color: var(--card-color);
+    border-radius: 50%;
+}
+
+.loader div:nth-child(2) {
+    animation-delay: .5s;
+}
+
+.loader div:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateY(0);
+    }
+
+    16.5% {
+        transform: translateY(-15px);
+    }
+
+    33% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }

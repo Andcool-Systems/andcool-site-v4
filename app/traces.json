@@ -1,16 +1,37 @@
 [
     {
         "startX": 1400,
-        "startY": 1170,
+        "startY": 1143,
+        "endX": 1600,
+        "endY": 997,
+        "vertical": false
+    },
+    {
+        "startX": 1400,
+        "startY": 1237,
         "endX": 1600,
         "endY": 1300,
         "vertical": false
     },
     {
-        "startX": 1400,
-        "startY": 1130,
-        "endX": 1600,
-        "endY": 1000,
+        "startX": 1601,
+        "startY": 872,
+        "endX": 1700,
+        "endY": 950,
+        "vertical": true
+    },
+    {
+        "startX": 1900,
+        "startY": 950,
+        "endX": 2000,
+        "endY": 872,
+        "vertical": true
+    },
+    {
+        "startX": 1800,
+        "startY": 950,
+        "endX": 1800,
+        "endY": 872,
         "vertical": false
     }
 ]

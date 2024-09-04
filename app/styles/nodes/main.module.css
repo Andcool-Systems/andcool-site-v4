@@ -1,0 +1,41 @@
+.main {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.main img {
+    border-radius: 50%;
+}
+
+.nick p,
+.nick h1 {
+    margin: 0;
+
+}
+
+.nick h1 {
+    font-size: 2rem;
+}
+
+.nick p {
+    font-size: .8rem;
+    color: rgb(199, 199, 199);
+}
+
+.navigate {
+    position: absolute;
+    right: .8rem;
+    top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    margin-top: 1rem;
+}
+
+.navigate p {
+    margin: 0;
+    font-size: .8rem;
+}

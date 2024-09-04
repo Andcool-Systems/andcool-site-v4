@@ -1,0 +1,11 @@
+.p {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-top: .5rem;
+}
+
+.p img {
+    width: 1.5rem;
+    aspect-ratio: 1 / 1;
+}
