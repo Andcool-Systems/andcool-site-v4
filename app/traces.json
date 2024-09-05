@@ -113,7 +113,7 @@
         "vertical": false
     },
     {
-        "name": "stack-node",
+        "name": "stack-nest",
         "startX": 1855,
         "startY": 968,
         "endX": 1855,
@@ -121,7 +121,7 @@
         "vertical": false
     },
     {
-        "name": "node-prisma",
+        "name": "nest-node",
         "startX": 1855,
         "startY": 1115,
         "endX": 1855,
@@ -129,11 +129,19 @@
         "vertical": false
     },
     {
-        "name": "prisma-python",
+        "name": "node-prisma",
         "startX": 1855,
         "startY": 1262,
         "endX": 1855,
         "endY": 1294,
+        "vertical": false
+    },
+    {
+        "name": "prisma-python",
+        "startX": 1855,
+        "startY": 1409,
+        "endX": 1855,
+        "endY": 1441,
         "vertical": false
     },
     {

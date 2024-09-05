@@ -212,21 +212,28 @@ const HomeClient = ({ birthday }: { birthday: boolean }) => {
                 </Node>
 
 
-                <Node x={1800} y={1000} width={112} height={115} header='nodejs.node'>
+                <Node x={1800} y={1000} width={112} height={115} header='nestjs.node'>
+                    <Link className={stack_node_style.container_stack} href='https://nestjs.com'>
+                        <Image src='/static/nest.svg' alt='' width={40} height={40} />
+                        <p>NestJS</p>
+                    </Link>
+                </Node>
+
+                <Node x={1800} y={1147} width={112} height={115} header='nodejs.node'>
                     <Link className={stack_node_style.container_stack} href='https://nodejs.org'>
                         <IconBrandNodejs width={40} height={40} />
                         <p>NodeJS</p>
                     </Link>
                 </Node>
 
-                <Node x={1800} y={1147} width={112} height={115} header='prisma.node'>
+                <Node x={1800} y={1294} width={112} height={115} header='prisma.node'>
                     <Link className={stack_node_style.container_stack} href='https://www.prisma.io'>
                         <IconBrandPrisma width={40} height={40} />
                         <p>PrismaORM</p>
                     </Link>
                 </Node>
 
-                <Node x={1800} y={1294} width={112} height={115} header='python.node'>
+                <Node x={1800} y={1441} width={112} height={115} header='python.node'>
                     <Link className={stack_node_style.container_stack} href='https://www.python.org'>
                         <IconBrandPython width={40} height={40} />
                         <p>Python</p>
