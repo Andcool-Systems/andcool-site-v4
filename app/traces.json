@@ -1,37 +1,155 @@
 [
     {
+        "name": "main-info",
+        "startX": 1175,
+        "startY": 1280,
+        "endX": 1175,
+        "endY": 1370,
+        "vertical": false
+    },
+    {
+        "name": "info-time",
+        "startX": 975,
+        "startY": 1600,
+        "endX": 1075,
+        "endY": 1533,
+        "vertical": true
+    },
+    {
+        "name": "info-wakatime",
+        "startX": 1175,
+        "startY": 1600,
+        "endX": 1175,
+        "endY": 1533,
+        "vertical": false
+    },
+    {
+        "name": "info-weather",
+        "startX": 1275,
+        "startY": 1533,
+        "endX": 1375,
+        "endY": 1600,
+        "vertical": true
+    },
+    {
+        "name": "main-github",
+        "startX": 955,
+        "startY": 1008,
+        "endX": 1067,
+        "endY": 1100,
+        "vertical": true
+    },
+    {
+        "name": "main-discord",
+        "startX": 1175,
+        "startY": 1008,
+        "endX": 1175,
+        "endY": 1100,
+        "vertical": false
+    },
+    {
+        "name": "main-telegram",
+        "startX": 1287,
+        "startY": 1100,
+        "endX": 1400,
+        "endY": 1008,
+        "vertical": true
+    },
+    {
+        "name": "main-stack",
         "startX": 1400,
-        "startY": 1143,
-        "endX": 1600,
-        "endY": 997,
+        "startY": 1190,
+        "endX": 1650,
+        "endY": 913,
         "vertical": false
     },
     {
-        "startX": 1601,
-        "startY": 872,
-        "endX": 1700,
-        "endY": 950,
-        "vertical": true
+        "name": "time-birthday",
+        "startX": 975,
+        "startY": 1750,
+        "endX": 975,
+        "endY": 1694,
+        "vertical": false,
+        "special": "birthday"
     },
     {
-        "startX": 1900,
-        "startY": 950,
-        "endX": 2000,
-        "endY": 872,
-        "vertical": true
-    },
-    {
-        "startX": 1800,
-        "startY": 950,
-        "endX": 1800,
-        "endY": 872,
+        "name": "stack-next",
+        "startX": 1706,
+        "startY": 968,
+        "endX": 1706,
+        "endY": 1000,
         "vertical": false
     },
     {
-        "startX": 750,
-        "startY": 997,
-        "endX": 950,
-        "endY": 1143,
+        "name": "next-react",
+        "startX": 1706,
+        "startY": 1115,
+        "endX": 1706,
+        "endY": 1147,
+        "vertical": false
+    },
+    {
+        "name": "react-ts",
+        "startX": 1706,
+        "startY": 1262,
+        "endX": 1706,
+        "endY": 1294,
+        "vertical": false
+    },
+    {
+        "name": "ts-html",
+        "startX": 1706,
+        "startY": 1409,
+        "endX": 1706,
+        "endY": 1441,
+        "vertical": false
+    },
+    {
+        "name": "html-css",
+        "startX": 1706,
+        "startY": 1556,
+        "endX": 1706,
+        "endY": 1588,
+        "vertical": false
+    },
+    {
+        "name": "stack-node",
+        "startX": 1855,
+        "startY": 968,
+        "endX": 1855,
+        "endY": 1000,
+        "vertical": false
+    },
+    {
+        "name": "node-prisma",
+        "startX": 1855,
+        "startY": 1115,
+        "endX": 1855,
+        "endY": 1147,
+        "vertical": false
+    },
+    {
+        "name": "prisma-python",
+        "startX": 1855,
+        "startY": 1262,
+        "endX": 1855,
+        "endY": 1294,
+        "vertical": false
+    },
+    {
+        "name": "stack-cpp",
+        "startX": 2005,
+        "startY": 968,
+        "endX": 2005,
+        "endY": 1000,
+        "vertical": false
+    },
+    {
+        "name": "cpp-docker",
+        "startX": 2005,
+        "startY": 1115,
+        "endX": 2005,
+        "endY": 1147,
         "vertical": false
     }
 ]

@@ -6,16 +6,14 @@ import { IconHome2, IconMinus, IconPlus } from "@tabler/icons-react";
 import main_style from '@/app/styles/main.module.css';
 import style from '@/app/styles/draggable.module.css';
 
-export const main_cords = { x: 1150, y: 1190 };
+export const main_cords = { x: 1175, y: 1190 };
 
 interface DraggableDivProps {
     children: React.ReactNode;
-    position: { x: number, y: number, duration: number },
-    trigger: boolean,
-    onUpdate(): void
+    position: { x: number, y: number },
 }
 
-const DraggableDiv = ({ children, position, trigger, onUpdate }: DraggableDivProps) => {
+const DraggableDiv = ({ children, position }: DraggableDivProps) => {
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const scale = useMotionValue(1);
@@ -32,11 +30,10 @@ const DraggableDiv = ({ children, position, trigger, onUpdate }: DraggableDivPro
     const [scaleSpeed, setScaleSpeed] = useState<number>(0.3);
 
     useEffect(() => {
-        if (!position || !trigger) return;
-        onUpdate();
+        if (!position) return;
         setHitValue(position);
-        setSpeed(position.duration);
-        setScaleSpeed(position.duration);
+        setSpeed(1);
+        setScaleSpeed(1);
         setScaleTarget(1);
     }, [position])
 
@@ -70,7 +67,6 @@ const DraggableDiv = ({ children, position, trigger, onUpdate }: DraggableDivPro
     };
 
     useEffect(() => {
-        onUpdate();
         if (!containerRef.current) return;
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
         const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
