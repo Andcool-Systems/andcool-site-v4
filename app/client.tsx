@@ -97,7 +97,7 @@ const HomeClient = ({ birthday }: { birthday: boolean }) => {
         const loader = document.getElementById('loading');
         if (loader) {
             loader.style.opacity = '0';
-            setTimeout(() => { loader.style.display = 'none' }, 500);
+            setTimeout(() => loader.style.display = 'none', 500);
         }
     }, []);
 
@@ -248,7 +248,14 @@ const HomeClient = ({ birthday }: { birthday: boolean }) => {
                     </Link>
                 </Node>
 
-                <Node x={1949} y={1147} width={112} height={115} header='docker.node'>
+                <Node x={1949} y={1147} width={112} height={115} header='java.node'>
+                    <Link className={stack_node_style.container_stack} href='https://www.java.com/ru'>
+                        <Image src='/static/java.svg' alt='' width={40} height={40} />
+                        <p>Java</p>
+                    </Link>
+                </Node>
+
+                <Node x={1949} y={1294} width={112} height={115} header='docker.node'>
                     <Link className={stack_node_style.container_stack} href='https://www.docker.com/'>
                         <IconBrandDocker width={40} height={40} />
                         <p>Docker</p>

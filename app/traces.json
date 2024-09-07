@@ -153,11 +153,19 @@
         "vertical": false
     },
     {
-        "name": "cpp-docker",
+        "name": "cpp-java",
         "startX": 2005,
         "startY": 1115,
         "endX": 2005,
         "endY": 1147,
+        "vertical": false
+    },
+    {
+        "name": "java-docker",
+        "startX": 2005,
+        "startY": 1262,
+        "endX": 2005,
+        "endY": 1294,
         "vertical": false
     }
 ]
