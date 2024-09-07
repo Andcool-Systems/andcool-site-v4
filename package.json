@@ -1,5 +1,10 @@
 {
   "name": "andcool_site_v4",
+  "author": {
+    "name": "AndcoolSystems",
+    "url": "https://andcool.ru",
+    "email": "andcoolsystems@gmail.com"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
