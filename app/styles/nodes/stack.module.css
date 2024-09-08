@@ -22,3 +22,13 @@
     margin: 0;
     color: rgb(189, 189, 189);
 }
+
+.container_stack svg,
+.container_stack img {
+    transition: transform 250ms;
+}
+
+.container_stack:hover svg,
+.container_stack:hover img {
+    transform: scale(1.1);
+}
