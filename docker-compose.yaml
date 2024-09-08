@@ -1,17 +1,12 @@
 version: "3"
 
 services:
-  andcool_site:
-    container_name: andcool_site
+  andcool_site_v4:
+    container_name: andcool_site_v4
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        ENV_VARIABLE: ${ENV_VARIABLE}
-        NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
     restart: always
-    ports:
-      - 8000:8000
     networks:
       - nginx
 
