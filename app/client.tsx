@@ -135,7 +135,7 @@ const HomeClient = ({ birthday }: { birthday: boolean }) => {
                     <div className={fira.className}>
                         {weather &&
                             <p className={weather_node_style.p}>
-                                {Math.round(weather?.temp)}°C, <img alt="" src={`https://weather.andcool.ru/static/icons/${weather.icon}.svg`} />
+                                {Math.round(weather?.temp)}°C, <Image alt="" src={`https://weather.andcool.ru/static/icons/${weather.icon}.svg`} width={24} height={24} />
                                 {weather?.condition}
                             </p>
                         }

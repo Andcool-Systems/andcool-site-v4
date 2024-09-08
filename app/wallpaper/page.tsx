@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from 'next/navigation';
 import Styles from '@/app/styles/wallpaper/style.module.css';
 import { Suspense } from 'react';
+import Image from "next/image";
 
 const WallpaperComponent = () => {
     const [time, setTime] = useState<string>('');
@@ -22,20 +23,24 @@ const WallpaperComponent = () => {
     useEffect(() => {
         setTime(getTime());
         setInterval(() => {
-			setTime(getTime());
-		}, 5000);
-        
+            setTime(getTime());
+        }, 5000);
+
     }, [])
     return (
-            <main className={Styles.main}>
-                <div className={Styles.container}>
-                    <img src={`/static/numbers/${time.charAt(0)}.gif`} />
-                    <img src={`/static/numbers/${time.charAt(1)}.gif`} />
-                    <p>:</p>
-                    <img src={`/static/numbers/${time.charAt(3)}.gif`} />
-                    <img src={`/static/numbers/${time.charAt(4)}.gif`} />
-                </div>
-            </main>
+        <main className={Styles.main}>
+            <div className={Styles.container}>
+                {time &&
+                    <>
+                        <Image alt='' src={`/static/numbers/${time.charAt(0)}.gif`} width={45} height={100} unoptimized />
+                        <Image alt='' src={`/static/numbers/${time.charAt(1)}.gif`} width={45} height={100} unoptimized />
+                        <p>:</p>
+                        <Image alt='' src={`/static/numbers/${time.charAt(3)}.gif`} width={45} height={100} unoptimized />
+                        <Image alt='' src={`/static/numbers/${time.charAt(4)}.gif`} width={45} height={100} unoptimized />
+                    </>
+                }
+            </div>
+        </main>
     );
 };
 
