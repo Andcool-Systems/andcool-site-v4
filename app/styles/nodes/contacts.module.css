@@ -12,3 +12,42 @@
     margin: 0;
     color: rgb(189, 189, 189);
 }
+
+.discord_user {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: .8rem;
+    margin-top: .5rem;
+}
+
+.discord_user img {
+    border-radius: 50%;
+    position: relative;
+    z-index: -1;
+}
+
+.nicknames {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.nicknames a {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+}
+
+.nicknames a:hover {
+    text-decoration: underline;
+}
+
+.nicknames p {
+    margin: 0;
+    font-size: .8rem;
+    color: gray;
+}

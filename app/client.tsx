@@ -31,6 +31,7 @@ import {
     IconServer,
     IconTerminal2
 } from '@tabler/icons-react';
+import { DiscordUser } from './page';
 
 const fira = Fira_Code({ subsets: ['cyrillic', 'latin'] });
 
@@ -43,7 +44,7 @@ interface Weather {
 }
 
 
-const HomeClient = ({ birthday }: { birthday: boolean }) => {
+const HomeClient = ({ birthday, discord_data, status }: { birthday: boolean, discord_data: DiscordUser, status: number }) => {
     const [hitValue, setHitValue] = useState<{ x: number, y: number }>({ x: 0, y: 0 });
     const [time, set_time] = useState('');
     const [weather, setWeather] = useState<Weather | null>(null);
@@ -52,6 +53,7 @@ const HomeClient = ({ birthday }: { birthday: boolean }) => {
 
     const traces = data.map((trace, index) => {
         if (trace.special === 'birthday' && !birthday) return;
+        if (trace.special === 'profile' && status !== 200) return;
         return <BezierLine
             key={index}
             startX={trace.startX}
@@ -114,20 +116,20 @@ const HomeClient = ({ birthday }: { birthday: boolean }) => {
                         </div>
                     </div>
                 </Node>
-                <Node x={975} y={1370} width={400} height={163} header='info.node'>
+                <Node x={1175} y={1370} width={400} height={163} center_x={true} header='info.node'>
                     <h1>Привет👋</h1>
                     <p style={{ marginBottom: 0, marginTop: '.4rem' }}>Меня зовут Андрей, мне {age} лет. Я Full Stack TypeScript && Python разработчик.
                         Занимаюсь разработкой сайтов, а так же пишу Телеграм ботов на заказ <span style={{ color: 'gray', fontSize: '.9rem' }}>(и для себя тоже).</span></p>
                 </Node>
 
-                <Node x={924} y={1600} width={102} header='time.node'>
+                <Node x={975} y={1600} width={102} center_x={true} header='time.node'>
                     <div className={fira.className}>
                         <p style={{ marginTop: '.5rem' }}>{time}</p>
                         <p style={{ marginTop: '.1rem', color: 'gray', fontSize: '.9rem' }}>UTC+3</p>
                     </div>
                 </Node>
                 {birthday &&
-                    <Node x={912} y={1750} header='birthday.node'>
+                    <Node x={975} y={1750} center_x={true} header='birthday.node'>
                         <></>
                     </Node>
                 }
@@ -141,7 +143,7 @@ const HomeClient = ({ birthday }: { birthday: boolean }) => {
                         }
                     </div>
                 </Node>
-                <Node x={1110} y={1600} width={130} header='wakatime.node'>
+                <Node x={1175} y={1600} width={130} center_x={true} header='wakatime.node'>
                     <div className={fira.className} style={{ marginTop: '.5rem' }}>
                         {wakatime &&
                             <Link href='https://wakatime.com/@AndcoolSystems'>{wakatime}</Link>
@@ -149,19 +151,39 @@ const HomeClient = ({ birthday }: { birthday: boolean }) => {
                     </div>
                 </Node>
 
-                <Node x={883} y={891} height={118} header='github.node'>
+                <Node x={955} y={891} height={118} center_x={true} header='github.node'>
                     <Link className={contacts_node_style.container} href={'https://github.com/Andcool-Systems'} target='_blank'>
                         <IconBrandGithubFilled width={40} height={40} />
                         <p className={fira.className}>Andcool-Systems</p>
                     </Link>
                 </Node>
-                <Node x={1107} y={891} width={136} height={118} header='discord.node'>
+                <Node x={1175} y={891} width={136} height={118} center_x={true} header='discord.node'>
                     <Link className={contacts_node_style.container} href={'https://discord.com/users/812990469482610729'} target='_blank'>
                         <Image src='/static/discord.svg' width={40} height={40} alt='' />
                         <p className={fira.className}>AndcoolSystems</p>
                     </Link>
                 </Node>
-                <Node x={1332} y={891} width={136} height={118} header='telegram.node'>
+
+                {status === 200 &&
+                    <Node x={1175} y={818} center_x={true} top_y={true} header='discord-profile.node'>
+                        <div className={contacts_node_style.discord_user}>
+                            <Image
+                                src={`https://cdn.discordapp.com/avatars/${discord_data.id}/${discord_data.avatar}?size=1024`}
+                                alt=''
+                                width={80}
+                                height={80}
+                                style={{ boxShadow: `0 0 50px 9px ${discord_data.banner_color}` }}
+                            />
+                            <div className={contacts_node_style.nicknames}>
+                                <Link target='_blank' href={`https://discord.com/users/${discord_data.id}`}>{discord_data.global_name || discord_data.username}</Link>
+                                <p className={fira.className}>{discord_data.username}</p>
+                            </div>
+                        </div>
+                    </Node>
+                }
+
+
+                <Node x={1400} y={891} width={136} height={118} center_x={true} header='telegram.node'>
                     <Link className={contacts_node_style.container} href={'https://t.me/andcool_systems'} target='_blank'>
                         <IconBrandTelegram width={40} height={40} />
                         <p className={fira.className}>andcool_systems</p>
@@ -276,17 +298,21 @@ interface NodeProps {
     y: number,
     width?: number,
     height?: number,
-    header: string
+    header: string,
+    center_x?: boolean,
+    center_y?: boolean,
+    top_y?: boolean
 }
 
-const Node = ({ children, x, y, width, height, header }: NodeProps) => {
+const Node = ({ children, x, y, width, height, header, center_x, center_y, top_y }: NodeProps) => {
     return (
         <div className={main_style.node}
             style={{
                 left: x,
                 top: y,
                 width: width,
-                height: height
+                height: height,
+                transform: `translate(${center_x ? '-50%' : '0'}, ${center_y ? '-50%' : top_y ? '-100%' : '0'})`
             }}>
             <h3 className={`${main_style.node_header} ${fira.className}`}>{header}</h3>
             {children}
