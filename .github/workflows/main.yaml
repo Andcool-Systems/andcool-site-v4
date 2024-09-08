@@ -61,7 +61,7 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      - name: Run build
+      - name: Eslint check
         run: npm run lint
 
   deploy:
