@@ -26,6 +26,8 @@
     border-radius: 50%;
     position: relative;
     z-index: -1;
+    width: 80px;
+    height: 80px;
 }
 
 .nicknames {
