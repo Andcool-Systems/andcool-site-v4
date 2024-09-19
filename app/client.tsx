@@ -162,7 +162,7 @@ const HomeClient = ({ birthday, discord_data, status }: { birthday: boolean, dis
                     </Link>
                 </Node>
 
-                {status === 200 &&
+                {/*status === 200 &&
                     <Node x={1175} y={818} center_x={true} top_y={true} header='discord-profile.node'>
                         <div className={contacts_node_style.discord_user}>
                             <Image
@@ -178,7 +178,7 @@ const HomeClient = ({ birthday, discord_data, status }: { birthday: boolean, dis
                             </div>
                         </div>
                     </Node>
-                }
+                */}
 
 
                 <Node x={1400} y={891} width={136} height={118} center_x={true} header='telegram.node'>
@@ -190,9 +190,9 @@ const HomeClient = ({ birthday, discord_data, status }: { birthday: boolean, dis
 
                 <Node x={1650} y={891} width={411} height={77} header='stack.node'>
                     <div className={stack_node_style.container}>
-                        <IconDeviceDesktop />
-                        <IconServer />
-                        <IconTerminal2 />
+                        <IconDeviceDesktop title='Frontend' />
+                        <IconServer title='Backend' />
+                        <IconTerminal2 title='Other' />
                     </div>
                 </Node>
 
@@ -282,6 +282,10 @@ const HomeClient = ({ birthday, discord_data, status }: { birthday: boolean, dis
                     </Link>
                 </Node>
 
+                <Node x={700} y={891} width={411} height={77} right_x={true} header='projects.node'>
+                    <p className={fira.className} style={{margin: 'auto', marginTop: '.5rem'}}>Раздел в разработке</p>
+                </Node>
+
                 {traces}
             </DraggableDiv >
         </>
@@ -299,11 +303,12 @@ interface NodeProps {
     header: string,
     center_x?: boolean,
     center_y?: boolean,
+    right_x?: boolean,
     top_y?: boolean,
     max_width?: number
 }
 
-const Node = ({ children, x, y, width, height, header, center_x, center_y, top_y, max_width }: NodeProps) => {
+const Node = ({ children, x, y, width, height, header, center_x, center_y, top_y, max_width, right_x }: NodeProps) => {
     return (
         <div className={main_style.node}
             style={{
@@ -312,7 +317,7 @@ const Node = ({ children, x, y, width, height, header, center_x, center_y, top_y
                 width: width,
                 height: height,
                 maxWidth: max_width,
-                transform: `translate(${center_x ? '-50%' : '0'}, ${center_y ? '-50%' : top_y ? '-100%' : '0'})`
+                transform: `translate(${center_x ? '-50%' : right_x ? '-100%' : '0'}, ${center_y ? '-50%' : top_y ? '-100%' : '0'})`
             }}>
             <h3 className={`${main_style.node_header} ${fira.className}`}>{header}</h3>
             {children}

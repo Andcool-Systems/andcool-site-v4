@@ -53,3 +53,13 @@
     font-size: .8rem;
     color: gray;
 }
+
+.container svg,
+.container img {
+    transition: transform 250ms;
+}
+
+.container:hover svg,
+.container:hover img {
+    transform: scale(1.1);
+}

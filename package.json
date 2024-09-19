@@ -8,11 +8,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 8005",
+    "dev": "next dev -p 8006",
     "build": "next build",
-    "start": "next start -p 8005",
+    "start": "next start -p 8006",
     "lint": "next lint",
-    "prod": "next build && next start -p 8005"
+    "prod": "next build && next start -p 8006"
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
