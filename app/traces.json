@@ -48,6 +48,15 @@
         "vertical": false
     },
     {
+        "name": "discord-profile",
+        "startX": 1175,
+        "startY": 891,
+        "endX": 1175,
+        "endY": 818,
+        "vertical": false,
+        "special": "profile"
+    },
+    {
         "name": "main-telegram",
         "startX": 1287,
         "startY": 1100,

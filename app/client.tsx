@@ -162,7 +162,7 @@ const HomeClient = ({ birthday, discord_data, status }: { birthday: boolean, dis
                     </Link>
                 </Node>
 
-                {/*status === 200 &&
+                {status === 200 &&
                     <Node x={1175} y={818} center_x={true} top_y={true} header='discord-profile.node'>
                         <div className={contacts_node_style.discord_user}>
                             <Image
@@ -178,8 +178,7 @@ const HomeClient = ({ birthday, discord_data, status }: { birthday: boolean, dis
                             </div>
                         </div>
                     </Node>
-                */}
-
+                }
 
                 <Node x={1400} y={891} width={136} height={118} center_x={true} header='telegram.node'>
                     <Link className={contacts_node_style.container} href={'https://t.me/andcool_systems'} target='_blank'>
