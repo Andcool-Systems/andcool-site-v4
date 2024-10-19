@@ -166,10 +166,10 @@ const HomeClient = ({ birthday, discord_data, status }: { birthday: boolean, dis
                     <Node x={1175} y={818} center_x={true} top_y={true} header='discord-profile.node'>
                         <div className={contacts_node_style.discord_user}>
                             <Image
-                                src={`https://cdn.discordapp.com/avatars/${discord_data.id}/${discord_data.avatar}?size=1024`}
+                                src={`https://pplbandage.ru/api/v1/avatars/812990469482610729`}
                                 alt=''
-                                width={1024}
-                                height={1024}
+                                width={80}
+                                height={80}
                                 style={{ boxShadow: `0 0 50px 9px ${discord_data.banner_color}` }}
                             />
                             <div className={contacts_node_style.nicknames}>
