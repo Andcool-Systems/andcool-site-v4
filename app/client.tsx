@@ -168,8 +168,8 @@ const HomeClient = ({ birthday, discord_data, status }: { birthday: boolean, dis
                             <Image
                                 src={`https://pplbandage.ru/api/v1/avatars/812990469482610729`}
                                 alt=''
-                                width={80}
-                                height={80}
+                                width={512}
+                                height={512}
                                 style={{ boxShadow: `0 0 50px 9px ${discord_data.banner_color}` }}
                             />
                             <div className={contacts_node_style.nicknames}>
