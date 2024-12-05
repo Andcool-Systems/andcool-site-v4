@@ -31,7 +31,6 @@ import {
     IconServer,
     IconTerminal2
 } from '@tabler/icons-react';
-import { DiscordUser } from './page';
 
 const fira = Fira_Code({ subsets: ['cyrillic', 'latin'] });
 
@@ -44,7 +43,7 @@ interface Weather {
 }
 
 
-const HomeClient = ({ birthday, discord_data, status }: { birthday: boolean, discord_data: DiscordUser, status: number }) => {
+const HomeClient = ({ birthday }: { birthday: boolean}) => {
     const [hitValue, setHitValue] = useState<{ x: number, y: number }>({ x: 0, y: 0 });
     const [time, set_time] = useState('');
     const [weather, setWeather] = useState<Weather | null>(null);
@@ -53,7 +52,7 @@ const HomeClient = ({ birthday, discord_data, status }: { birthday: boolean, dis
 
     const traces = data.map((trace, index) => {
         if (trace.special === 'birthday' && !birthday) return;
-        if (trace.special === 'profile' && status !== 200) return;
+        if (trace.special === 'profile') return;
         return <BezierLine
             key={index}
             startX={trace.startX}
@@ -161,24 +160,6 @@ const HomeClient = ({ birthday, discord_data, status }: { birthday: boolean, dis
                         <p className={fira.className}>AndcoolSystems</p>
                     </Link>
                 </Node>
-
-                {status === 200 &&
-                    <Node x={1175} y={818} center_x={true} top_y={true} header='discord-profile.node'>
-                        <div className={contacts_node_style.discord_user}>
-                            <Image
-                                src={`https://pplbandage.ru/api/v1/avatars/812990469482610729`}
-                                alt=''
-                                width={512}
-                                height={512}
-                                style={{ boxShadow: `0 0 50px 9px ${discord_data.banner_color}` }}
-                            />
-                            <div className={contacts_node_style.nicknames}>
-                                <Link target='_blank' href={`https://discord.com/users/${discord_data.id}`}>{discord_data.global_name || discord_data.username}</Link>
-                                <p className={fira.className}>{discord_data.username}</p>
-                            </div>
-                        </div>
-                    </Node>
-                }
 
                 <Node x={1400} y={891} width={136} height={118} center_x={true} header='telegram.node'>
                     <Link className={contacts_node_style.container} href={'https://t.me/andcool_systems'} target='_blank'>

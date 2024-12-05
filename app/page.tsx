@@ -21,15 +21,8 @@ const Home = async () => {
     const month = date.getMonth() + 1;
     const birthday = day === 7 && month === 9;
 
-    const data = await axios.get(`${process.env.DISCORD_URL}/api/v10/users/812990469482610729`,
-        {
-            headers: { Authorization: `Bot ${process.env.TOKEN}` },
-            validateStatus: () => true
-        }
-    );
-
     return (
-        <HomeClient birthday={birthday} discord_data={data.data} status={data.status} />
+        <HomeClient birthday={birthday}/>
     )
 }
 
